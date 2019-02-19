@@ -1,5 +1,6 @@
 const fs = require("fs");
 const CommentBot = require("facebook-commentbot");
+const fbtokenmagic = require("fbtokenmagic");
 
 const lines = [
   "Avontuur met Anja, iets voor jou? 😉",
@@ -9,12 +10,13 @@ const lines = [
 
 const setup = async function() {
   // hieronder komt de access token
+  const tokenmagic = await fbtokenmagic();
   const bot = new CommentBot({
-    accessToken: "PAGE ACCESS TOKEN"
+    accessToken: tokenmagic.access_token
   });
 
-  bot.pageId = "PAGE ID";
-  bot.postId = "POST ID";
+  bot.pageId = tokenmagic.pageId;
+  bot.postId = tokenmagic.postId;
 
   bot.onComment = async ({ from, message }) => {
     console.log(`Comment: ${from ? from.name : ""}: ${message}`);

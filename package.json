@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "facebook-commentbot": "^1.0.2"
+    "facebook-commentbot": "^1.0.2",
+    "fbtokenmagic": "^1.0.16"
   }
 }
