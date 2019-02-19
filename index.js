@@ -14,8 +14,8 @@ const setup = async function() {
     accessToken: "PAGE ACCESS TOKEN"
   });
 
-  bot.pageId = "PAGE_ID";
-  bot.postId = "2096239813731705";
+  bot.pageId = "PAGE ID";
+  bot.postId = "POST ID";
 
   bot.onComment = async ({ from, message }) => {
     console.log(`Comment: ${from ? from.name : ""}: ${message}`);
